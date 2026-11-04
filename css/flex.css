@@ -7,11 +7,11 @@ body {
     /* 深色遮罩 + 背景圖，圖片填滿整個畫面 */
     background:
         linear-gradient(rgba(25, 18, 12, 0.6), rgba(25, 18, 12, 0.85)),
-        url("../images/hero.png") center / cover no-repeat fixed;
+        url("../images/f1.jpg") center / cover no-repeat fixed;
 }
 
 ::selection {
-    background: #d4af37;
+    background: #f34a90;
     color: #1e1610;
 }
 
@@ -32,7 +32,7 @@ section {
     margin: 40px auto;
     padding: 30px;
     box-sizing: border-box;
-    border: 2px solid rgba(212, 175, 55, 0.6);   /* 金色畫框 */
+    border: 2px solid rgba(212, 55, 152, 0.6);   /* 金色畫框 */
     border-radius: 20px;
     background: rgba(25, 18, 12, 0.35);
     backdrop-filter: blur(6px);                  /* 毛玻璃 */
@@ -41,7 +41,7 @@ section {
 h1 {
     flex: 0 0 100%;
     text-align: center;
-    color: #d4af37;
+    color: #d4377b;
     letter-spacing: 8px;
     font-size: clamp(2rem, 5vw, 4rem);
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
@@ -55,7 +55,7 @@ article {
     padding: 20px;
     box-sizing: border-box;
     line-height: 2rem;
-    border: 1px solid rgba(212, 175, 55, 0.6);
+    border: 1px solid rgba(212, 55, 133, 0.6);
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.12);
     transition: 0.4s;
@@ -63,7 +63,7 @@ article {
 
 article:hover {
     transform: translateY(-10px);
-    border-color: #d4af37;
+    border-color: #d43795;
     background: rgba(255, 255, 255, 0.22);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
@@ -75,7 +75,7 @@ article img {
     height: 220px;
     object-fit: cover;
     margin-bottom: 15px;
-    border-radius: 110px 110px 10px 10px;        /* 拱門形狀 */
+    border-radius: 10px 10px 10px 10px;        /* 拱門形狀 */
     transition: transform 0.8s;
 }
 
@@ -88,7 +88,7 @@ h2 {
     line-height: clamp(2rem, 3vw, 3rem);
     padding: 0;
     margin: 0;
-    color: #d4af37;
+    color: #d43776;
 }
 
 /*for tablets*/
