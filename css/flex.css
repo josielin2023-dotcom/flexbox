@@ -16,16 +16,11 @@ body {
 }
 
 section {
-    display: flex;
+    /* 改用 Grid 網格排版 */
+    display: grid;
+    /* 核心：精準鎖定一排就是 3 欄，每欄平分剩餘空間 (1fr) */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    flex-wrap: wrap;
-
-    justify-content: flex-start;
-    /*flex-start, flex-end, center*/
-    align-items: stretch;
-    /*flex-start, flex-end, center, stretch, baseline*/
-    align-content: space-around;
-    /*flex-start, flex-end, center, stretch, space-between, space-around*/
 
     width: 90vw;
     min-height: 100vh;
@@ -38,6 +33,7 @@ section {
     backdrop-filter: blur(6px);                  /* 毛玻璃 */
 }
 
+
 h1 {
     flex: 0 0 100%;
     text-align: center;
@@ -48,8 +44,15 @@ h1 {
     margin: 10px 0 20px;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 article {
-    flex: 0 0 calc((100% - 20px * 2) / 3);       /* 一排三個 */
+    /* 刪除原本的 flex 屬性，寬度會自動填滿網格 */
+    width: 100%;
+    
     overflow: hidden;                            /* 圖片放大時不超出卡片 */
     overflow-wrap: break-word;
     padding: 20px;
@@ -91,21 +94,17 @@ h2 {
     color: #d43776;
 }
 
-/*for tablets*/
+/* 平板尺寸（寬度 1200px 以下）：改成一排 2 張 */
 @media only screen and (max-width: 1200px) {
-    article {
-        flex: 0 0 calc((100% - 20px) / 2);       /* 一排兩個 */
+    section {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/*for mobile*/
+/* 手機尺寸（寬度 768px 以下）：改成一排 1 張，垂直排列 */
 @media only screen and (max-width: 768px) {
     section {
-        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
         padding: 15px;
-    }
-
-    article {
-        flex: 0 0 auto;
     }
 }
