@@ -1,0 +1,111 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: "Noto Serif TC", Georgia, serif;
+    color: #f5efe6;
+    /* 深色遮罩 + 背景圖，圖片填滿整個畫面 */
+    background:
+        linear-gradient(rgba(25, 18, 12, 0.6), rgba(25, 18, 12, 0.85)),
+        url("../images/hero.png") center / cover no-repeat fixed;
+}
+
+::selection {
+    background: #d4af37;
+    color: #1e1610;
+}
+
+section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+    /*flex-start, flex-end, center*/
+    align-items: stretch;
+    /*flex-start, flex-end, center, stretch, baseline*/
+    align-content: space-around;
+    /*flex-start, flex-end, center, stretch, space-between, space-around*/
+
+    width: 90vw;
+    min-height: 100vh;
+    margin: 40px auto;
+    padding: 30px;
+    box-sizing: border-box;
+    border: 2px solid rgba(212, 175, 55, 0.6);   /* 金色畫框 */
+    border-radius: 20px;
+    background: rgba(25, 18, 12, 0.35);
+    backdrop-filter: blur(6px);                  /* 毛玻璃 */
+}
+
+h1 {
+    flex: 0 0 100%;
+    text-align: center;
+    color: #d4af37;
+    letter-spacing: 8px;
+    font-size: clamp(2rem, 5vw, 4rem);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+    margin: 10px 0 20px;
+}
+
+article {
+    flex: 0 0 calc((100% - 20px * 2) / 3);       /* 一排三個 */
+    overflow: hidden;                            /* 圖片放大時不超出卡片 */
+    overflow-wrap: break-word;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 2rem;
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    transition: 0.4s;
+}
+
+article:hover {
+    transform: translateY(-10px);
+    border-color: #d4af37;
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 新增：每一格的圖片 */
+article img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 110px 110px 10px 10px;        /* 拱門形狀 */
+    transition: transform 0.8s;
+}
+
+article:hover img {
+    transform: scale(1.08);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 2vw, 3rem);
+    line-height: clamp(2rem, 3vw, 3rem);
+    padding: 0;
+    margin: 0;
+    color: #d4af37;
+}
+
+/*for tablets*/
+@media only screen and (max-width: 1200px) {
+    article {
+        flex: 0 0 calc((100% - 20px) / 2);       /* 一排兩個 */
+    }
+}
+
+/*for mobile*/
+@media only screen and (max-width: 768px) {
+    section {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    article {
+        flex: 0 0 auto;
+    }
+}
